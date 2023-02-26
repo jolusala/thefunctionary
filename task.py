@@ -58,6 +58,7 @@ def store_screenshot():
 
     browser.screenshot(
         filename="./screenshot.png")
+    print('screenshot taken')
 
 
 def get_category() -> list:

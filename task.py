@@ -53,11 +53,12 @@ The function does not return anything.
 
 
 def store_screenshot():
-    # browser.screenshot(
-    #   filename="./robot-python/output/screenshot.png")
-
     browser.screenshot(
-        filename="./screenshot.png")
+        filename="./robot-python/output/screenshot.png")
+
+    # browser.screenshot(
+    #   filename="./screenshot.png")
+
     print('screenshot taken')
 
 

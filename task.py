@@ -53,11 +53,11 @@ The function does not return anything.
 
 
 def store_screenshot():
-    browser.screenshot(
-        filename="./robot-python/output/screenshot.png")
-
     # browser.screenshot(
-    #   filename="./screenshot.png")
+    #    filename="./robot-python/output/screenshot.png")
+
+    browser.screenshot(
+        filename="./screenshot.png")
 
     print('screenshot taken')
 
@@ -289,8 +289,11 @@ with the filename specified in the dictionary.
         url = dictIdNews[i]["imagenUrl"]
         # print(url)
         filename = dictIdNews[i]["imagenFileName"]
+        # http.download(
+        #    url, target_file="./robot-python/output/images/"+filename)
+
         http.download(
-            url, target_file="./robot-python/output/images/"+filename)
+            url, target_file="./"+filename)
 
 
 def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
@@ -307,8 +310,11 @@ def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
 
     """
 
+    # excelFile.create_workbook(
+    #    path="./robot-python/output/info.xlsx", fmt="xlsx")
+
     excelFile.create_workbook(
-        path="./robot-python/output/info.xlsx", fmt="xlsx")
+        path="./info.xlsx", fmt="xlsx")
 
     listHeaders = ["Title", "Date", "Description",
                    "Picture File Name", "Count of Search", "True/False"]

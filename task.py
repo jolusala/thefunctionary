@@ -53,8 +53,11 @@ The function does not return anything.
 
 
 def store_screenshot():
+    # browser.screenshot(
+    #   filename="./robot-python/output/screenshot.png")
+
     browser.screenshot(
-        filename="./robot-python/output/screenshot.png")
+        filename="./screenshot.png")
 
 
 def get_category() -> list:

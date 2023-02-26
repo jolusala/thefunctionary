@@ -10,8 +10,8 @@ browser = Selenium()
 http = HTTP()
 excelFile = Files()
 
-#phrase = "USA"
-phrase = input("Insert a phrase to search: ")
+phrase = "USA"
+#phrase = input("Insert a phrase to search: ")
 
 print("initializing robot: " + phrase)
 

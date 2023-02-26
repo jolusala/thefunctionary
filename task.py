@@ -364,7 +364,7 @@ def main():
 
         # set_category(cat)
 
-        store_screenshot()
+        # store_screenshot()
 
         click_date_range_button()
 

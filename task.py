@@ -1,5 +1,6 @@
 # Robot to enter weekly sales data into the RobotSpareBin Industries Intranet.
 from RPA.Browser.Selenium import Selenium
+import os
 import re
 import time
 from RPA.HTTP import HTTP
@@ -57,7 +58,7 @@ def store_screenshot():
     #    filename="./robot-python/output/screenshot.png")
 
     browser.screenshot(
-        filename="./screenshot.png")
+        filename=os.environ["./screenshot.png"])
 
     print('screenshot taken')
 

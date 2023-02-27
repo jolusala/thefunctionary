@@ -56,16 +56,12 @@ The function does not return anything.
 
 
 def store_screenshot():
-    library.add_work_item_file("./output/")
-
-    # browser.screenshot(
-    #    filename="./robot-python/output/screenshot.png")
+    f = open("demofile2.txt", "a")
+    f.write("Now the file has more content!")
+    f.close()
 
     browser.screenshot(
-        filename="./output/screenshot.png")
-
-    # browser.screenshot(
-    #    filename=os.environ["screenshot.png"])
+        filename="./robot-python/output/screenshot.png")
 
     print('screenshot taken')
 

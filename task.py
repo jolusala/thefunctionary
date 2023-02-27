@@ -5,8 +5,10 @@ import re
 import time
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
+from RPA.Robocorp.WorkItems import WorkItems
 
 
+library = WorkItems()
 browser = Selenium()
 http = HTTP()
 excelFile = Files()
@@ -54,11 +56,16 @@ The function does not return anything.
 
 
 def store_screenshot():
+    library.add_work_item_file("./output/")
+
     # browser.screenshot(
     #    filename="./robot-python/output/screenshot.png")
 
     browser.screenshot(
-        filename=os.environ["./screenshot.png"])
+        filename="./output/screenshot.png")
+
+    # browser.screenshot(
+    #    filename=os.environ["screenshot.png"])
 
     print('screenshot taken')
 

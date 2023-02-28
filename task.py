@@ -58,7 +58,7 @@ The function does not return anything.
 def store_screenshot():
     cwd = os.getcwd()
     print(cwd)
-    file = open(cwd+"filename.txt", "w")
+    file = open(cwd+"/filename.txt", "w")
     file.write("Primera línea" + os.linesep)
     file.write("Segunda línea")
     file.close()

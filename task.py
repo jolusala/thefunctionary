@@ -1,12 +1,13 @@
 # Robot to enter weekly sales data into the RobotSpareBin Industries Intranet.
 from RPA.Browser.Selenium import Selenium
-import os
 import re
 import time
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
+from RPA.Robocorp.WorkItems import WorkItems
 
 
+library = WorkItems()
 browser = Selenium()
 http = HTTP()
 excelFile = Files()
@@ -54,10 +55,11 @@ The function does not return anything.
 
 
 def store_screenshot():
-    print(os.getcwd())
+    library.create_output_work_item(
+        {1: 1, 2: 2, 3: 3}, "prueba.pdf", save=True)
 
-    browser.screenshot(
-        filename="./robot-python/output/screenshot.png")
+    # browser.screenshot(
+    #    filename="./robot-python/output/screenshot.png")
 
     print('screenshot taken')
 

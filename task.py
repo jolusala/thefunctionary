@@ -9,7 +9,7 @@ import os
 import logging
 
 
-items = WorkItems()
+item = WorkItems()
 browser = Selenium()
 http = HTTP()
 excelFile = Files()
@@ -58,10 +58,13 @@ The function does not return anything.
 
 def store_screenshot():
     browser.screenshot(filename="screenshot.png")
-    library = WorkItems()
-    library.get_input_work_item()
-    library.add_work_item_file("screenshot.png")
-    library.save_work_item()
+    browser.screenshot(filename="screenshot2.png")
+
+    item.get_input_work_item()
+    item.add_work_item_file("screenshot.png")
+    item.add_work_item_file("screenshot2.png")
+
+    item.save_work_item()
 
     # browser.screenshot(
     #    filename="./output/screenshot.png")

@@ -57,7 +57,7 @@ The function does not return anything.
 
 def store_screenshot():
 
-    items.add_work_item_file("output.xls")
+    items.create_output_work_item("output.xls")
     items.save_work_item()
 
     browser.screenshot(

@@ -7,7 +7,6 @@ from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
 
 
-library = WorkItems()
 browser = Selenium()
 http = HTTP()
 excelFile = Files()

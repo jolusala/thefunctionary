@@ -56,7 +56,7 @@ The function does not return anything.
 
 
 def store_screenshot():
-
+    items.get_input_work_item()
     items.create_output_work_item("output.xls")
     items.save_work_item()
 

@@ -57,14 +57,14 @@ The function does not return anything.
 
 
 def store_screenshot():
-
+    hola = browser.screenshot()
     library = WorkItems()
     library.get_input_work_item()
-    library.add_work_item_file("output.xls")
+    library.add_work_item_file(hola, "screenshot.png")
     library.save_work_item()
 
-    browser.screenshot(
-        filename="./output/screenshot.png")
+    # browser.screenshot(
+    #    filename="./output/screenshot.png")
 
     print('screenshot taken')
 

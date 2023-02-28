@@ -55,11 +55,9 @@ The function does not return anything.
 
 
 def store_screenshot():
-    library.create_output_work_item(
-        {1: 1, 2: 2, 3: 3}, "prueba.pdf", save=True)
 
-    # browser.screenshot(
-    #    filename="./robot-python/output/screenshot.png")
+    browser.screenshot(
+        filename="./output/screenshot.png")
 
     print('screenshot taken')
 
@@ -295,7 +293,7 @@ with the filename specified in the dictionary.
         #    url, target_file="./robot-python/output/images/"+filename)
 
         http.download(
-            url, target_file="./"+filename)
+            url, target_file="./output/images/"+filename)
 
 
 def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
@@ -316,7 +314,7 @@ def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
     #    path="./robot-python/output/info.xlsx", fmt="xlsx")
 
     excelFile.create_workbook(
-        path="./info.xlsx", fmt="xlsx")
+        path="./output/info.xlsx", fmt="xlsx")
 
     listHeaders = ["Title", "Date", "Description",
                    "Picture File Name", "Count of Search", "True/False"]

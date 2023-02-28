@@ -5,6 +5,7 @@ import time
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
 from RPA.Robocorp.WorkItems import WorkItems
+import os
 
 
 library = WorkItems()
@@ -55,6 +56,12 @@ The function does not return anything.
 
 
 def store_screenshot():
+    cwd = os.getcwd()
+    print(cwd)
+    file = open(cwd+"filename.txt", "w")
+    file.write("Primera línea" + os.linesep)
+    file.write("Segunda línea")
+    file.close()
 
     browser.screenshot(
         filename="./output/screenshot.png")

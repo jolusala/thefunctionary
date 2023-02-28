@@ -5,8 +5,6 @@ import re
 import time
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
-from RPA.Robocorp.WorkItems import WorkItems
-import sys
 
 
 library = WorkItems()
@@ -57,7 +55,7 @@ The function does not return anything.
 
 
 def store_screenshot():
-    print(sys.path)
+    print(os.getcwd())
 
     browser.screenshot(
         filename="./robot-python/output/screenshot.png")

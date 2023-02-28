@@ -7,7 +7,6 @@ from RPA.Excel.Files import Files
 from RPA.Robocorp.WorkItems import WorkItems
 
 
-
 item = WorkItems()
 browser = Selenium()
 http = HTTP()
@@ -297,9 +296,8 @@ with the filename specified in the dictionary.
         #    url, target_file="./robot-python/output/images/"+filename)
 
         http.download(
-            url, target_file="/output/images/"+filename+".jpg")
-    
-    item.add_work_item_files("/output/images/*.jpg")
+            url, target_file=filename+".jpg")
+        item.add_work_item_files(filename+".jpg")
 
 
 def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:

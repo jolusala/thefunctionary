@@ -56,7 +56,7 @@ The function does not return anything.
 
 
 def store_screenshot():
-    current_item = items.get_current_work_item()
+    current_item = items.create_output_work_item()
     print(current_item)
 
     browser.screenshot(

@@ -59,8 +59,8 @@ The function does not return anything.
 def store_screenshot():
 
     library = WorkItems()
-    library.get_input_work_item()
-
+    hola = library.get_input_work_item()
+    print(hola)
     browser.screenshot(
         filename="./output/screenshot.png")
 

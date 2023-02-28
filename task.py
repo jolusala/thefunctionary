@@ -6,6 +6,7 @@ from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
 from RPA.Robocorp.WorkItems import WorkItems
 import os
+import logging
 
 
 items = WorkItems()
@@ -56,8 +57,9 @@ The function does not return anything.
 
 
 def store_screenshot():
-    current_item = items.create_output_work_item("image.pdf")
-    print(current_item)
+
+    library = WorkItems()
+    library.get_input_work_item()
 
     browser.screenshot(
         filename="./output/screenshot.png")

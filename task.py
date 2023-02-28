@@ -5,8 +5,7 @@ import time
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
 from RPA.Robocorp.WorkItems import WorkItems
-import os
-import logging
+
 
 
 item = WorkItems()
@@ -18,6 +17,7 @@ phrase = "USA"
 #phrase = input("Insert a phrase to search: ")
 
 print("initializing robot: " + phrase)
+item.get_input_work_item()
 
 
 def open_website():
@@ -58,13 +58,7 @@ The function does not return anything.
 
 def store_screenshot():
     browser.screenshot(filename="screenshot.png")
-    browser.screenshot(filename="screenshot2.png")
-
-    item.get_input_work_item()
     item.add_work_item_file("screenshot.png")
-    item.add_work_item_file("screenshot2.png")
-
-    item.save_work_item()
 
     # browser.screenshot(
     #    filename="./output/screenshot.png")
@@ -303,7 +297,9 @@ with the filename specified in the dictionary.
         #    url, target_file="./robot-python/output/images/"+filename)
 
         http.download(
-            url, target_file="./output/images/"+filename)
+            url, target_file="/output/images/"+filename+".jpg")
+    
+    item.add_work_item_files("/output/images/*.jpg")
 
 
 def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
@@ -324,7 +320,7 @@ def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
     #    path="./robot-python/output/info.xlsx", fmt="xlsx")
 
     excelFile.create_workbook(
-        path="./output/info.xlsx", fmt="xlsx")
+        path="info.xlsx", fmt="xlsx")
 
     listHeaders = ["Title", "Date", "Description",
                    "Picture File Name", "Count of Search", "True/False"]
@@ -343,6 +339,7 @@ def write_in_Excel(dictIdNews: dict, conteo: dict, checkContains: dict) -> None:
     print('creating excel file')
 
     excelFile.save_workbook()
+    item.add_work_item_file("info.xlsx")
 
 
 def main():
@@ -400,6 +397,7 @@ def main():
         print(e)
 
     finally:
+        item.save_work_item()
         browser.close_browser()
 
 
